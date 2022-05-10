@@ -73,6 +73,9 @@ jobs:
           popd
           echo >> readme.txt
           echo "md5校验值：" >> readme.txt
+          echo ${{ env.NAME }}
+          echo ${{ env.IMAGES }}
+
 
       - name: Upload images directory
         if: steps.organize.outputs.status == 'success' && !cancelled()
