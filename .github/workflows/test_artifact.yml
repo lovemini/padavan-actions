@@ -44,7 +44,7 @@ jobs:
       - name: Clone source code and build toolchain
         run: |
           echo "DATE=$(TZ='Asia/Shanghai' date '+%Y.%m.%d-%H%M')" >> $GITHUB_ENV
-          echo "NAME=Padavan- ${{ github.event.inputs.production }}" >> $GITHUB_ENV
+          echo "NAME=Padavan-${{ github.event.inputs.production }}" >> $GITHUB_ENV
           echo 开始编译时间： >> $IMAGES/readme.txt
           TZ='Asia/Shanghai' date '+%Y-%m-%d %H:%M:%S' >> $IMAGES/readme.txt
           git clone --depth=1 ${{ github.event.inputs.cloneurl }} $RT_N56U > /dev/null
