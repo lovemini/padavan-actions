@@ -25,3 +25,5 @@
 https://github.com/P3TERX/Actions-OpenWrt
 
 https://github.com/weln2020/manual-action-padavan
+
+https://github.com/MeIsReallyBa/padavan-4.4
