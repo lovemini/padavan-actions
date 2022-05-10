@@ -9,7 +9,6 @@ on:
         required: false
       cloneurl:
         description: 设置源码地址：
-        # default: "https://github.com/vb1980/Padavan-KVR.git"
         default: "https://github.com/MeIsReallyBa/padavan-4.4.git"
         required: false
 
@@ -73,7 +72,6 @@ jobs:
           done
 
       - name: Organize compile infomations
-        id: organize
         run: |
           cd $IMAGES
           echo 完成编译时间： >> readme.txt
