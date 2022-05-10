@@ -42,7 +42,6 @@ jobs:
         sudo chown $USER:$GROUPS $RT_N56U
         
     - name: Clone source code
-      working-directory: /workdir
       run: |
         df -hT $PWD
         echo "DATE=$(TZ='Asia/Shanghai' date '+%Y.%m.%d-%H%M')" >> $GITHUB_ENV
