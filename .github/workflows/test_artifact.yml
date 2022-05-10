@@ -52,6 +52,7 @@ jobs:
           sh dl_toolchain.sh > /dev/null
 
       - name: Load custom feeds
+        id: feeds
         run: |
           cp -f ./$DIY_P1_SH $TRUNK/$DIY_P1_SH
           chmod +x $TRUNK/$DIY_P1_SH
@@ -75,6 +76,8 @@ jobs:
           echo "md5校验值：" >> readme.txt
           echo ${{ env.NAME }}
           echo ${{ env.IMAGES }}
+          echo ${{ steps.feeds.outputs.status }}
+          ls -lh
 
 
       - name: Upload images directory
