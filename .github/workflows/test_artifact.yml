@@ -1,4 +1,4 @@
-name: Build Padavan
+name: Test Artifact
 
 on:
   workflow_dispatch:
