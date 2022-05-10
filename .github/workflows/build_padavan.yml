@@ -43,9 +43,9 @@ jobs:
         
     - name: Clone source code
       run: |
-        df -hT $PWD
         echo "DATE=$(TZ='Asia/Shanghai' date '+%Y.%m.%d-%H%M')" >> $GITHUB_ENV
         echo "NAME=Padavan- ${{ github.event.inputs.production }}" >> $GITHUB_ENV
+        mkdir -p $IMAGES
         echo 开始编译时间： >> $IMAGES/readme.txt
         TZ='Asia/Shanghai' date '+%Y-%m-%d %H:%M:%S' >> $IMAGES/readme.txt
         git clone --depth=1 ${{ github.event.inputs.cloneurl }} $RT_N56U > /dev/null
