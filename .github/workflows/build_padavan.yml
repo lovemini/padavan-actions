@@ -73,6 +73,7 @@ jobs:
           done
 
       - name: Organize compile infomations
+        id: organize
         run: |
           cd $IMAGES
           echo 完成编译时间： >> readme.txt
@@ -93,7 +94,7 @@ jobs:
           ls -l
 
       - name: Upload images directory
-        if: true
+        if: steps.organize.outputs.status == 'success' && !cancelled()
         uses: actions/upload-artifact@main
         with:
           name: ${{ env.NAME }}
