@@ -79,7 +79,7 @@ jobs:
 
       - name: Upload images directory
         if: steps.organize.outputs.status == 'success' && !cancelled()
-        uses: actions/upload-artifact@main
+        uses: actions/upload-artifact@v3
         with:
           name: ${{ env.NAME }}
           path: ${{ env.IMAGES }}
