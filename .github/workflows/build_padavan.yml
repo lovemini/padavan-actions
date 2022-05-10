@@ -39,13 +39,13 @@ jobs:
         sudo -E apt-get -qq clean
         sudo timedatectl set-timezone "$TZ"
         sudo mkdir -p $RT_N56U
+        mkdir -p $IMAGES
         sudo chown $USER:$GROUPS $RT_N56U
         
-    - name: Clone source code
+    - name: Clone source code and build toolchain
       run: |
         echo "DATE=$(TZ='Asia/Shanghai' date '+%Y.%m.%d-%H%M')" >> $GITHUB_ENV
         echo "NAME=Padavan- ${{ github.event.inputs.production }}" >> $GITHUB_ENV
-        mkdir -p $IMAGES
         echo 开始编译时间： >> $IMAGES/readme.txt
         TZ='Asia/Shanghai' date '+%Y-%m-%d %H:%M:%S' >> $IMAGES/readme.txt
         git clone --depth=1 ${{ github.event.inputs.cloneurl }} $RT_N56U > /dev/null
@@ -61,7 +61,6 @@ jobs:
     - name: 开始编译
       run: |
         for m in ${{ github.event.inputs.production }}; do
-          cp -f config/$m.config $TRUNK/configs/templates
           pushd $TRUNK
           echo "::group::开始编译 ${m}..."
           sudo ./clear_tree || echo
