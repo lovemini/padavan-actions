@@ -50,7 +50,7 @@ jobs:
           cd $RT_N56U/toolchain-mipsel
           sh dl_toolchain.sh > /dev/null
 
-      - name: Load custom feeds
+      - name: Load custom diy setting
         run: |
           cp -f ./$DIY_P1_SH $TRUNK/$DIY_P1_SH
           chmod +x $TRUNK/$DIY_P1_SH
