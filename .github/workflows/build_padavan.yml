@@ -9,7 +9,8 @@ on:
         required: false
       cloneurl:
         description: 设置源码地址：
-        default: "https://github.com/MeIsReallyBa/padavan-4.4.git"
+        # default: "https://github.com/MeIsReallyBa/padavan-4.4.git"
+        default: "https://github.com/keke1023/Padavan.git"
         required: false
 
 env:
