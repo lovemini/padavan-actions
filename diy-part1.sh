@@ -1,6 +1,7 @@
 # 修改配置
 # sed -i 's#SMARTDNS=n#SMARTDNS=y#' build_firmware_modify
-# sed -i 's#FRPC=n#FRPC=y#' build_firmware_modify
+sed -i 's#FRPC=n#FRPC=y#' build_firmware_modify
+sed -i 's#FRPS=n#FRPS=y#' build_firmware_modify
 sed -i 's#ALIDDNS=y#ALIDDNS=n#' build_firmware_modify
 # 超频
 # sed -i 's#CONFIG_FIRMWARE_INCLUDE_OC=n#CONFIG_FIRMWARE_INCLUDE_OC=y#' build_firmware_modify
