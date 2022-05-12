@@ -2,6 +2,7 @@
 sed -i '/FRP/d' configs/templates/RM2100.config
 sed -i '/WIREGUARD/d' configs/templates/RM2100.config
 sed -i '/MENTOHUST/d' configs/templates/RM2100.config
+sed -i '/TUNSAFE/d' configs/templates/RM2100.config
 
 sed -i 's#0xc2#0x362#' linux-3.4.x/arch/mips/rt2880/init.c
 echo "CONFIG_FIRMWARE_CPU_900MHZ=y" >> configs/templates/RM2100.config
@@ -13,6 +14,9 @@ sed -i 's#SMARTDNS=n#SMARTDNS=y#' build_firmware_modify
 sed -i 's#ADBYBY=n#ADBYBY=y#' build_firmware_modify
 sed -i 's#FRPC=n#FRPC=y#' build_firmware_modify
 sed -i 's#ZEROTIER=n#ZEROTIER=y#' build_firmware_modify
+sed -i 's#DDNSTO=n#DDNSTO=y#' build_firmware_modify
+
+sed -i 's#ALDRIVER=y#ALDRIVER=n#' build_firmware_modify
 
 sed -i 's#192.168.2#192.168.5#' user/shared/defaults.h
 # 超频
