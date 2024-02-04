@@ -1,5 +1,5 @@
 # 修改配置
-sed -i '/FRP/d' configs/templates/RM2100.config
+# sed -i '/FRP/d' configs/templates/RM2100.config
 sed -i '/WIREGUARD/d' configs/templates/RM2100.config
 sed -i '/MENTOHUST/d' configs/templates/RM2100.config
 sed -i '/TUNSAFE/d' configs/templates/RM2100.config
@@ -11,8 +11,12 @@ sed -i 's#CONFIG_FIRMWARE_INCLUDE_V2RAY=y#CONFIG_FIRMWARE_INCLUDE_V2RAY=n#' buil
 sed -i 's#CONFIG_FIRMWARE_INCLUDE_TROJAN=y#CONFIG_FIRMWARE_INCLUDE_TROJAN=n#' build_firmware_modify
 sed -i 's#CONFIG_FIRMWARE_INCLUDE_SSOBFS=y#CONFIG_FIRMWARE_INCLUDE_SSOBFS=n#' build_firmware_modify
 
+# lovemini config
+sed -i 's#CONFIG_FIRMWARE_INCLUDE_FRPC=n#CONFIG_FIRMWARE_INCLUDE_FRPC=y#' build_firmware_modify
+sed -i 's#CONFIG_FIRMWARE_INCLUDE_FRPS=n#CONFIG_FIRMWARE_INCLUDE_SSOBFS=y#' build_firmware_modify
+
 # 修改默认ip段
-sed -i 's#192.168.2#192.168.5#' user/shared/defaults.h
+#sed -i 's#192.168.2#192.168.5#' user/shared/defaults.h
 
 ################################ Padavan-KVR ################################
 # 此处填写对应频率的十六进制：1000Mhz=0x312 1100Mhz=0x362 1120Mhz=0x372 1200Mhz=0x3B2
