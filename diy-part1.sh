@@ -11,10 +11,6 @@ sed -i 's#CONFIG_FIRMWARE_INCLUDE_V2RAY=y#CONFIG_FIRMWARE_INCLUDE_V2RAY=n#' buil
 sed -i 's#CONFIG_FIRMWARE_INCLUDE_TROJAN=y#CONFIG_FIRMWARE_INCLUDE_TROJAN=n#' build_firmware_modify
 sed -i 's#CONFIG_FIRMWARE_INCLUDE_SSOBFS=y#CONFIG_FIRMWARE_INCLUDE_SSOBFS=n#' build_firmware_modify
 
-# lovemini config
-sed -i 's#CONFIG_FIRMWARE_INCLUDE_FRPC=n#CONFIG_FIRMWARE_INCLUDE_FRPC=y#' build_firmware_modify
-sed -i 's#CONFIG_FIRMWARE_INCLUDE_FRPS=n#CONFIG_FIRMWARE_INCLUDE_SSOBFS=y#' build_firmware_modify
-
 # 修改默认ip段
 #sed -i 's#192.168.2#192.168.5#' user/shared/defaults.h
 
@@ -39,9 +35,13 @@ sed -i 's#ALIDDNS=y#ALIDDNS=n#' build_firmware_modify
 sed -i 's#DDNSTO=y#DDNSTO=n#' build_firmware_modify
 sed -i 's#SQM=y#SQM=n#' build_firmware_modify
 sed -i 's#WIREGUARD=y#WIREGUARD=n#' build_firmware_modify
-# 增加需要的插件
+
+# 修改的插件
 sed -i 's#SMARTDNS=n#SMARTDNS=y#' build_firmware_modify
 sed -i 's#FRPC=n#FRPC=y#' build_firmware_modify
+sed -i 's#FRPS=n#FRPS=y#' build_firmware_modify
+
+
 
 
 
